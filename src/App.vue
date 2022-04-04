@@ -1,18 +1,19 @@
 <template>
   <div class="fixedDivWrapper">
     <the-header @toggle-add-product="toggleAddProduct"></the-header>
-    <transition>
-      <keep-alive>
+    <keep-alive>
+      <transition name="slide-fade">
         <add-product
           v-if="isAddProductOn"
           :categories="categories"
         ></add-product>
-      </keep-alive>
-    </transition>
+      </transition>
+    </keep-alive>
   </div>
   <div class="productsListWrapper">
     <products-list></products-list>
   </div>
+  <div class="overlay"></div>
 </template>
 
 <script lang="ts">
@@ -69,8 +70,27 @@ export default {
   top: 0;
 }
 
+.overlay {
+  background-color: lightgray;
+  height: 100%;
+}
+
 .productsListWrapper {
   top: 9vh;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 
 the-header {

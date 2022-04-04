@@ -44,7 +44,6 @@ export default {
       type="text"
       v-model="addedProductDescription"
     ></textarea>
-    <p>{{ addedProductCategoryId }}</p>
   </div>
 </template>
 
@@ -56,6 +55,7 @@ export default {
   width: 80%;
   position: absolute;
   right: 10vw;
+  padding-bottom: 20px;
 }
 
 h6 {

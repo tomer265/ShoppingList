@@ -4,11 +4,13 @@ export default {
   // eslint-disable-next-line
   data(): any {
     return {
+      isX: false as boolean,
       headLine: "רשימת קניות" as string,
     };
   },
   methods: {
     toggleAddProductDisplay(): void {
+      this.isX = !this.isX;
       this.$emit("toggle-add-product");
     },
   },
@@ -17,7 +19,9 @@ export default {
 
 <template>
   <nav>
-    <button id="addBtn" @click="toggleAddProductDisplay">+</button>
+    <button id="addBtn" @click="toggleAddProductDisplay">
+      {{ this.isX ? "X" : "+" }}
+    </button>
     <h4 id="headerTitle">{{ headLine }}</h4>
   </nav>
 </template>
