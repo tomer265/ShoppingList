@@ -14,5 +14,6 @@ export default {
 <style scoped>
 .itemWrapper {
   display: inline;
+  line-height: 0.5;
 }
 </style>

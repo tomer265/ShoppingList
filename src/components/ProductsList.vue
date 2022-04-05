@@ -1,83 +1,21 @@
 <template>
   <ul>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
-    <list-item is-checked="false" item-name="test" item-desc="cool"></list-item>
+    <list-item
+      v-for="p in productsList"
+      :key="p.categoryId + new Date()"
+      is-checked="false"
+      item-name="test"
+      item-desc="cool"
+    ></list-item>
   </ul>
 </template>
 
 <script lang="ts">
+import { Product } from '@/models/product';
 import ListItem from "./ListItem.vue";
 
 export default {
-  // eslint-disable-next-line
+  props: ["productsList"],
   data() {
     return {
       title: "asdef" as string,
@@ -86,6 +24,12 @@ export default {
   components: {
     ListItem,
   },
+  computed: {
+    productsList(): Product[]{
+      console.log(this.$props.productsList)
+      return this.$props.productsList.sort((p: Product) => p.categoryId);
+    }
+  }
 };
 </script>
 

@@ -2,7 +2,7 @@
   <div class="fixedDivWrapper">
     <the-header @toggle-add-product="toggleAddProduct"></the-header>
     <keep-alive>
-      <transition name="slide-fade">
+      <transition class="addProductWrapper" name="slide-fade">
         <add-product
           v-if="isAddProductOn"
           :categories="categories"
@@ -10,14 +10,17 @@
       </transition>
     </keep-alive>
   </div>
-  <div class="productsListWrapper">
-    <products-list></products-list>
+  <div class="productsListWrapper" v-bind:class="{ overlay: isAddProductOn }">
+    <products-list
+      v-if="products && products.length > 0"
+      products-list="products"
+    ></products-list>
   </div>
-  <div class="overlay"></div>
 </template>
 
 <script lang="ts">
 import { Category } from "./models/category";
+import { Product } from "./models/product";
 
 export default {
   name: "App",
@@ -43,6 +46,7 @@ export default {
         { id: 16, name: "תבלינים" },
         { id: 17, name: "שונות" },
       ] as Category[],
+      products: [] as Product[],
       isAddProductOn: false as boolean,
     };
   },
@@ -50,6 +54,23 @@ export default {
     toggleAddProduct(): void {
       this.isAddProductOn = !this.isAddProductOn;
     },
+    getCookie(name: string) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts && parts.length === 2) {
+        const partsData = parts?.pop() ?? "none";
+        if (partsData === "none") {
+          return partsData;
+        }
+        return partsData.split(";").shift();
+      }
+    },
+  },
+  mounted() {
+    const cookieValue = this.getCookie("productsCookie");
+    if (!cookieValue || cookieValue === "none") {
+      this.products = cookieValue;
+    }
   },
 };
 </script>
@@ -63,6 +84,12 @@ export default {
   color: #2c3e50;
 }
 
+.addProductWrapper {
+  position: absolute;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 .fixedDivWrapper {
   position: fixed;
   width: 100%;
@@ -71,12 +98,14 @@ export default {
 }
 
 .overlay {
-  background-color: lightgray;
-  height: 100%;
+  background-color: gray;
+  min-height: 89vh;
 }
 
 .productsListWrapper {
-  top: 9vh;
+  padding-top: 9vh;
+  position: relative;
+  z-index: -1;
 }
 
 .slide-fade-enter-active {
@@ -84,7 +113,7 @@ export default {
 }
 
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(0.5, 0.3, 0.3, 0.5);
 }
 
 .slide-fade-enter-from,
