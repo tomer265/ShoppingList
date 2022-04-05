@@ -2,7 +2,7 @@
 import { Product } from "@/models/product";
 export default {
   props: ["categories"],
-  emits: ["addProduct", "cancel"],
+  emits: ["add-product-to-list"],
   // eslint-disable-next-line
   data(): any {
     return {
@@ -19,6 +19,7 @@ export default {
       p.desc = this.addedProductDescription;
       p.categoryId = this.addedProductCategoryId;
       this.clearForm();
+      this.$emit('add-product-to-list', p);
     },
     clearForm() {
       this.addedProductTitle = "";
@@ -65,12 +66,12 @@ export default {
       <base-button
         class="cancelBtn"
         btn-text="מחק"
-        @emitting-event="addProduct"
+        @emitting-event="clearForm"
       ></base-button>
       <base-button
         class="addBtn"
         btn-text="הוסף"
-        @emitting-event="clearForm"
+        @emitting-event="addProduct"
       ></base-button>
     </div>
   </div>

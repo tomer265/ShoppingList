@@ -6,14 +6,15 @@
         <add-product
           v-if="isAddProductOn"
           :categories="categories"
+          @add-product-to-list="addProductToList"
         ></add-product>
       </transition>
     </keep-alive>
   </div>
   <div class="productsListWrapper" v-bind:class="{ overlay: isAddProductOn }">
     <products-list
-      v-if="products && products.length > 0"
-      products-list="products"
+      v-if="productsArr.length > 0"
+      :products-arr="productsArr"
     ></products-list>
   </div>
 </template>
@@ -24,7 +25,6 @@ import { Product } from "./models/product";
 
 export default {
   name: "App",
-  // eslint-disable-next-line
   data() {
     return {
       categories: [
@@ -46,7 +46,7 @@ export default {
         { id: 16, name: "תבלינים" },
         { id: 17, name: "שונות" },
       ] as Category[],
-      products: [] as Product[],
+      productsArr: [] as Product[],
       isAddProductOn: false as boolean,
     };
   },
@@ -64,6 +64,16 @@ export default {
         }
         return partsData.split(";").shift();
       }
+    },
+    addProductToList(product: Product) {
+      let index;
+      if (!this.productsArr) {
+        index = 0;
+        this.productsArr = [];
+      } else {
+        index = this.productsArr.length;
+      }
+      this.productsArr[index] = product;
     },
   },
   mounted() {
@@ -95,6 +105,7 @@ export default {
   width: 100%;
   right: 0vw;
   top: 0;
+  z-index: 2;
 }
 
 .overlay {
@@ -105,7 +116,6 @@ export default {
 .productsListWrapper {
   padding-top: 9vh;
   position: relative;
-  z-index: -1;
 }
 
 .slide-fade-enter-active {
