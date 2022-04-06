@@ -15,6 +15,7 @@
     <products-list
       v-if="productsArr.length > 0"
       :products-arr="productsArr"
+      :categories-to-display="categoriesToDisplay"
     ></products-list>
   </div>
 </template>
@@ -47,6 +48,7 @@ export default {
         { id: 17, name: "שונות" },
       ] as Category[],
       productsArr: [] as Product[],
+      categoriesToDisplay: [] as Category[],
       isAddProductOn: false as boolean,
     };
   },
@@ -66,14 +68,35 @@ export default {
       }
     },
     addProductToList(product: Product) {
-      let index;
+      let productindex;
       if (!this.productsArr) {
-        index = 0;
+        productindex = 0;
         this.productsArr = [];
       } else {
-        index = this.productsArr.length;
+        productindex = this.productsArr.length;
       }
-      this.productsArr[index] = product;
+      this.productsArr[productindex] = product;
+
+      let productCategoryIdToCheck = product.categoryId;
+      let isCategoryExistsInCategoriesToDisplay =
+        this.categoriesToDisplay.filter(
+          (c: Category) => c.id === productCategoryIdToCheck
+        );
+      if (
+        !isCategoryExistsInCategoriesToDisplay ||
+        isCategoryExistsInCategoriesToDisplay.length === 0
+      ) {
+        let categoryToAdd = this.categories.filter(
+          (c: Category) => c.id === productCategoryIdToCheck
+        );
+        let categoryIndex;
+        if (!this.categoriesToDisplay) {
+          categoryIndex = 0;
+        } else {
+          categoryIndex = this.categoriesToDisplay.length;
+        }
+        this.categoriesToDisplay[categoryIndex] = categoryToAdd[0];
+      }
     },
   },
   mounted() {
